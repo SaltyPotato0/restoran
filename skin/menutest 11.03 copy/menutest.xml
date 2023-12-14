@@ -1,0 +1,538 @@
+<krpano>
+
+<menu_settings 
+		 width="200" 
+		 height="100%" 
+		 close_width="-200" 
+		 bgcolor="0x858e33" 
+		 bgalpha="0.9" 
+		 bgalpha_mobile="1" 
+		 mobile_width="100%" 
+		 mobile_height="100%" 
+		 mobile_close="-100%" 
+		 menu_bt_height="30" 
+		 mobile_menu_bt_height="40"
+		 tweenvalue=".4"
+		 MMI1items="13"
+		 MMI2items="4"
+		 MMI3items="5"
+		 MMI4items="4"
+		 MMI5items="0"
+		 MainMenuItem1_y="40"
+		 MainMenuItem2_y="calc: menu_settings.MainMenuItem1_y + menu_settings.menu_bt_height"
+		 MainMenuItem3_y="calc: menu_settings.MainMenuItem2_y + menu_settings.menu_bt_height"
+		 MainMenuItem4_y="calc: menu_settings.MainMenuItem3_y + menu_settings.menu_bt_height"
+		 MainMenuItem5_y="calc: menu_settings.MainMenuItem4_y + menu_settings.menu_bt_height"
+
+		 />
+<style name="SubMenu" type="text" x="0" width="get:menu_settings.width" height="get:menu_settings.menu_bt_height"
+		css="color:#ffffff; font-family:Arial, Helvetica; font-weight:bold; font-size:14px;" align="lefttop"  padding="5 0 0 15" backgroundcolor="0xDED891" backgroundalpha="0" roundedge="0" border="false" 
+		onover="tween(backgroundalpha,1);set(css, color:#333333 font-family:Arial; font-weight: bold; font-size:14px;)" 
+		onout="tween(backgroundalpha,0);set(css, color:#ffffff; font-family:Arial; font-weight: bold; font-size:14px;)"
+		
+/>
+<style name="MainMenu" type="text" x="0" width="get:menu_settings.width" height="get:menu_settings.menu_bt_height"
+		css="color:#ffffff; font-family:Arial, Helvetica; font-weight:bold; font-size:15px;" align="lefttop"  padding="5 0 0 5" backgroundcolor="0xDED891" backgroundalpha="0" roundedge="0" border="false" 
+		onover="tween(backgroundalpha,1);set(css, color:#333333 font-family:Arial; font-weight: bold; font-size:15px;)" 
+		onout="tween(backgroundalpha,0);set(css, color:#ffffff; font-family:Arial; font-weight: bold; font-size:15px;)"
+/>
+
+<style name="icon" type="text"  css=" border: solid white; border-width: 0 3px 3px 0; display: inline-block; padding: 3px;  transform: rotate(45deg); -webkit-transform: rotate(45deg);" backgroundalpha="0" enabled="false" align="topcenter" x="80" y="5"/>
+<layer name="menuicon"   type="text" width="22" height="22" x="170" y="10" onclick="hideMenu" align="leftttop" zorder="20" keep="true" html="[div][/div] [div][/div] [div][/div]" css="div {width: 22px;height: 4px;background-color: white;margin: 3px 0;}" backgroundalpha="0" />
+<!--<layer name="menuicon2" type="image" keep="true" url="vtourskin_mapspot.png" scale="0.3" x="170" y="10" align="lefttop" zorder="1" onclick="hideMenu"/>-->
+
+	<layer name="AllinMenu" type="container"  keep="true" bgalpha="1" bgcolor="0x858e33" width="get:menu_settings.width" height="100%" align="topleft" x="0" y="0" maskchildren="true" zorder="">
+		
+		<layer name="MainMenuItem1" type="container"  bgalpha="0" bgcolor="0x00ff00"  width="get:menu_settings.width" height="get:menu_settings.menu_bt_height" align="topleft" x="0" y="get:menu_settings.MainMenuItem1_y" zorder="">
+			<layer name="MM1-1" style="MainMenu" type="text" html="Restoran" x="" y="0" onclick="MainMenuItem1-heightshow" />
+			<layer name="showicon1" style="icon" />
+				<layer name="SubMeinMenuitem1" type="container"  width="get:menu_settings.width" maskchildren="true" height="get:menu_settings.menu_bt_height">
+					<layer name="SubMM1-1" style="SubMenu" html="Parking" onclick="GoToScene();" go="0"  y="calc:menu_settings.menu_bt_height * 1"/>
+					<layer name="SubMM1-2" style="SubMenu" html="Restoran 1" onclick="GoToScene();" go="1" y="calc:menu_settings.menu_bt_height * 2"/>
+					<layer name="SubMM1-3" style="SubMenu" html="Restoran 2"  onclick="GoToScene()" go="2" y="calc:menu_settings.menu_bt_height * 3"/>
+					<layer name="SubMM1-4" style="SubMenu" html="Restoran 3" onclick="GoToScene()" go="3" y="calc:menu_settings.menu_bt_height * 4"/>
+					<layer name="SubMM1-5" style="SubMenu" html="Restoran 4" onclick="GoToScene()" go="4" y="calc:menu_settings.menu_bt_height * 5"/>
+					<layer name="SubMM1-6" style="SubMenu" html="Restoran 5" onclick="GoToScene()" go="5" y="calc:menu_settings.menu_bt_height * 6"/>
+					<layer name="SubMM1-7" style="SubMenu" html="Restoran 1a" onclick="GoToScene()" go="6" y="calc:menu_settings.menu_bt_height * 7"/>
+					<layer name="SubMM1-8" style="SubMenu" html="Restoran 2a" onclick="GoToScene()" go="7" y="calc:menu_settings.menu_bt_height * 8"/>
+					<layer name="SubMM1-9" style="SubMenu" html="Restoran 3a" onclick="GoToScene()" go="8" y="calc:menu_settings.menu_bt_height * 9"/>
+					<layer name="SubMM1-10" style="SubMenu" html="Restoran 4a" onclick="GoToScene()" go="9" y="calc:menu_settings.menu_bt_height * 10"/>
+					<layer name="SubMM1-11" style="SubMenu" html="Restoran 1.sprat 1" onclick="GoToScene()" go="10" y="calc:menu_settings.menu_bt_height * 11"/>
+					<layer name="SubMM1-12" style="SubMenu" html="Restoran 1.spart 2" onclick="GoToScene()" go="11" y="calc:menu_settings.menu_bt_height * 12"/>
+				
+				</layer>		
+		</layer>
+		
+		<layer name="MainMenuItem2" type="container"  bgalpha="0" bgcolor="0xaa00cc"  width="get:menu_settings.width" height="get:menu_settings.menu_bt_height" align="topleft" x="" y="get:menu_settings.MainMenuItem2_y" zorder="">
+			<layer name="MM1-2" style="MainMenu" type="text" html="Sala" x="0" y="" onclick="MainMenuItem2-heightshow"/>
+			<layer name="showicon2" style="icon"/>
+				<layer name="SubMeinMenuitem2" type="container" width="get:menu_settings.width" maskchildren="true" height="get:menu_settings.menu_bt_height" >
+					<layer name="SubMM2-1" style="SubMenu" html="Hodnik" onclick="GoToScene()" go="12" y="calc:menu_settings.menu_bt_height * 1" />
+					<layer name="SubMM2-2" style="SubMenu" html="Sala 1a" onclick="GoToScene()" go="13" y="calc:menu_settings.menu_bt_height * 2"/>
+					<layer name="SubMM2-3" style="SubMenu" html="Sala 1b" onclick="GoToScene()" go="14" y="calc:menu_settings.menu_bt_height * 3"/>
+				</layer>		
+		</layer>
+		
+		<layer name="MainMenuItem3" type="container"  bgalpha="0" bgcolor="0xaaffff"  width="get:menu_settings.width" height="get:menu_settings.menu_bt_height" align="topleft" x="" y="get:menu_settings.MainMenuItem3_y" zorder="">
+			<layer name="MM1-3" style="MainMenu" type="text" html="Bašta" x="0" y="" onclick="MainMenuItem3-heightshow"/>
+			<layer name="showicon3" style="icon"/>
+				<layer name="SubMeinMenuitem3" type="container" width="get:menu_settings.width" maskchildren="true" height="get:menu_settings.menu_bt_height" >
+					<layer name="SubMM3-1" style="SubMenu" html="Bašta" onclick="GoToScene()" go="15" y="calc:menu_settings.menu_bt_height * 1" />
+					<layer name="SubMM3-2" style="SubMenu" html="Mostić" onclick="GoToScene()" go="16" y="calc:menu_settings.menu_bt_height * 2"/>
+					<layer name="SubMM3-3" style="SubMenu" html="Terasa 1" onclick="GoToScene()" go="17" y="calc:menu_settings.menu_bt_height * 3"/>
+					<layer name="SubMM3-4" style="SubMenu" html="Terasa 2" onclick="GoToScene()" go="18" y="calc:menu_settings.menu_bt_height * 4"/>
+					<!--<layer name="SubMM3-5" style="SubMenu" html="Ovo je SubMM5-5" onclick="GoToScene()" y="calc:menu_settings.menu_bt_height * 5"/>-->
+				</layer>		
+		</layer>
+		
+		
+		
+		<layer name="MainMenuItem4" type="container"  bgalpha="0" bgcolor="0xaa655f" width="get:menu_settings.width" height="get:menu_settings.menu_bt_height" align="topleft" x="" y="get:menu_settings.MainMenuItem4_y" zorder="">
+			<layer name="MM1-4" style="MainMenu" type="text" html="Sobe" x="0" y="" onclick="MainMenuItem4-heightshow"/>
+			<layer name="showicon4" style="icon"/>
+				<layer name="SubMeinMenuitem4" type="container" width="get:menu_settings.width" maskchildren="true" height="get:menu_settings.menu_bt_height" >
+					<layer name="SubMM4-1" style="SubMenu" html="Soba 1" onclick="GoToScene()" go="19" y="calc:menu_settings.menu_bt_height * 1" />
+					<layer name="SubMM4-2" style="SubMenu" html="Soba 2" onclick="GoToScene()" go="20" y="calc:menu_settings.menu_bt_height * 2"/>
+					<layer name="SubMM4-3" style="SubMenu" html="Soba 3" onclick="GoToScene()" go="21" y="calc:menu_settings.menu_bt_height * 3"/>
+				<!--<layer name="SubMM4-4" style="SubMenu" html="Ovo je SubMM4-4" onclick="GoToScene()" go="15" y="calc:menu_settings.menu_bt_height * 4"/>
+					<layer name="SubMM4-5" style="SubMenu" html="Ovo je SubMM4-5" y="calc:menu_settings.menu_bt_height * 5"/>
+					<layer name="SubMM4-6" style="SubMenu" html="Ovo je SubMM4-6" y="calc:menu_settings.menu_bt_height * 6"/>
+					<layer name="SubMM4-7" style="SubMenu" html="Ovo je SubMM4-7" y="calc:menu_settings.menu_bt_height * 7"/>
+					<layer name="SubMM4-8" style="SubMenu" html="Ovo je SubMM4-8" y="calc:menu_settings.menu_bt_height * 8"/>
+					<layer name="SubMM4-9" style="SubMenu" html="Ovo je SubMM4-9" y="calc:menu_settings.menu_bt_height * 9"/>
+					<layer name="SubMM4-10" style="SubMenu" html="Ovo je SubMM4-10" y="calc:menu_settings.menu_bt_height * 10"/>
+					<layer name="SubMM4-11" style="SubMenu" html="Ovo je SubMM4-11" y="calc:menu_settings.menu_bt_height * 11"/>
+					<layer name="SubMM4-12" style="SubMenu" html="Ovo je SubMM4-12" y="calc:menu_settings.menu_bt_height * 12"/>
+					<layer name="SubMM4-13" style="SubMenu" html="Ovo je SubMM4-13" y="calc:menu_settings.menu_bt_height * 13"/>
+					<layer name="SubMM4-14" style="SubMenu" html="Ovo je SubMM4-14" y="calc:menu_settings.menu_bt_height * 14"/>
+					<layer name="SubMM4-15" style="SubMenu" html="Ovo je SubMM4-15" y="calc:menu_settings.menu_bt_height * 15"/>
+					<layer name="SubMM4-16" style="SubMenu" html="Ovo je SubMM4-16" y="calc:menu_settings.menu_bt_height * 16"/>
+				-->	
+				</layer>	
+		</layer>
+		<!--
+		<layer name="MainMenuItem5" type="container"  bgalpha="0" bgcolor="0xaaff0f" width="get:menu_settings.width" height="get:menu_settings.menu_bt_height" align="topleft" x="" y="get:menu_settings.MainMenuItem5_y" zorder="" >
+			<layer name="MM1-5" style="MainMenu" type="text" html="Ovo je mm item 5" x="0" y="" onclick="MainMenuItem5-heightshow"/>
+
+		</layer>
+		<layer name="MainMenuItem5" type="container" width="get:menu_settings.width" maskchildren="true" height="get:menu_settings.menu_bt_height">
+		</layer>
+		-->
+	</layer>
+	<events name="testactions" keep="true"  onxmlcomplete="trace(get(scene[get(xml.scene)].index));  trace(); "/>
+<!--
+ <action name="Submenu1AddLayers">
+	trace(get(scene.count));
+	for(set(i,0), i LT scene.count, inc(i),
+	  addlayer(scene[get(i).name]);
+	  set(layer[scene[get(i).name].)
+	);
+ </action>
+
+	
+				
+
+
+
+
+-->
+
+<action name="lol">
+
+
+ 
+    for(set(i,0), i LT layer.count, inc(i),
+		if(layer[get(i)].go == get(scene[get(xml.scene)].index),
+			set(layer[get(i)].backgroundalpha, 1);
+			
+		);	
+    );
+ 
+</action>
+<action name="GoToScene"> loadscene(get(go),null,MERGE,BLEND(.5)); //skin_updatescroll(); </action>
+  <action name="hideMenu">
+	tween(layer[AllinMenu].x, -200, .5);
+	tween(layer[menuicon].x, 10, .48);
+	set(layer[menuicon].onclick, showMenu);
+	trace(layer[AllinMenu].width)
+  </action>  
+  
+  <action name="showMenu">
+	set(layer[menuicon].onclick, hideMenu);
+	tween(layer[AllinMenu].x, 0, .5);
+	tween(layer[menuicon].x, 170, .48);
+  </action>  
+ 	
+<action name="MainMenuItem1-heightshow">
+		<!-- rotate arrow icon-->
+		tween(layer[showicon1].rotate, -180, get(tweenvalue));
+		tween(layer[showicon1].y, 22, get(tweenvalue));
+		tween(layer[showicon2].rotate, 0, get(tweenvalue));
+		tween(layer[showicon2].y, 5, get(tweenvalue));
+		tween(layer[showicon3].rotate, 0, get(tweenvalue));
+		tween(layer[showicon3].y, 5, get(tweenvalue));
+		tween(layer[showicon4].rotate, 0, get(tweenvalue));
+		tween(layer[showicon4].y, 5, get(tweenvalue));
+		tween(layer[showicon5].rotate, 0, get(tweenvalue));
+		tween(layer[showicon5].y, 5, get(tweenvalue));
+	
+		<!-- setting hight of MainMenuItem to show submenus-->
+		tween(layer[MainMenuItem1].height, calc(menu_settings.menu_bt_height*menu_settings.MMI1items), get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem1].height, calc(menu_settings.menu_bt_height*menu_settings.MMI1items),  get(menu_settings.tweenvalue));
+		trace(layer[MainMenuItem1].y);
+		trace(layer[SubMeinMenuitem1].height);
+
+		<!-- setting onclick to heightshow-->
+		set(layer[MM1-1].onclick, MainMenuItem1-heighthide);
+		if(layer[MM1-2].onclick === "MainMenuItem2-heighthide",
+			set(layer[MM1-2].onclick, MainMenuItem2-heightshow);
+			);
+		if(layer[MM1-3].onclick === "MainMenuItem3-heighthide",
+			set(layer[MM1-3].onclick, MainMenuItem3-heightshow);
+			);
+		if(layer[MM1-4].onclick === "MainMenuItem4-heighthide",
+			set(layer[MM1-4].onclick, MainMenuItem4-heightshow);
+			);
+		if(layer[MM1-5].onclick === "MainMenuItem5-heighthide",
+			set(layer[MM1-5].onclick, MainMenuItem5-heightshow);
+			);
+		trace(layer[MM1-1].onclick);trace(layer[MM1-2].onclick);trace(layer[MM1-3].onclick);
+		<!-- setting resseting height of other items-->
+		tween(layer[MainMenuItem2].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem2].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem3].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem3].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem4].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem4].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem5].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem5].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+
+
+		<!-- setting position for other menu items-->
+		tween(layer[MainMenuItem2].y, calc(menu_settings.menu_bt_height* menu_settings.MMI1items + Layer[MainMenuItem1].y),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem3].y, calc(menu_settings.menu_bt_height* (menu_settings.MMI1items + 1) + Layer[MainMenuItem1].y),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem4].y, calc(menu_settings.menu_bt_height* (menu_settings.MMI1items + 2) + Layer[MainMenuItem1].y),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem5].y, calc(menu_settings.menu_bt_height* (menu_settings.MMI1items + 3) + Layer[MainMenuItem1].y),  get(menu_settings.tweenvalue));
+		
+</action>
+
+<action name="MainMenuItem1-heighthide">
+		<!-- rotate back arrow icon-->
+		tween(layer[showicon1].rotate, 0, get(tweenvalue));
+		tween(layer[showicon1].y, 5, get(tweenvalue));
+		
+		<!--set(layer[SubMeinMenuitem1].visible, false);-->
+		set(MainMenuItem1-show, false);
+		tween(layer[MainMenuItem1].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem1].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		<!--trace(layer[MainMenuItem2].y);-->
+		set(layer[MM1-1].onclick, MainMenuItem1-heightshow);
+		
+		<!--trace(layer[MM1-1].onclick);-->
+		
+		<!-- setting postion for other menu items-->
+		tween(layer[MainMenuItem2].y, get(menu_settings.MainMenuItem2_y),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem3].y, get(menu_settings.MainMenuItem3_y), get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem4].y, get(menu_settings.MainMenuItem4_y), get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem5].y, get(menu_settings.MainMenuItem5_y), get(menu_settings.tweenvalue));
+
+
+		
+</action>
+
+
+
+<action name="MainMenuItem2-heightshow">
+		<!-- rotate arrow icon-->
+		tween(layer[showicon2].rotate, -180, get(tweenvalue));
+		tween(layer[showicon2].y, 20, get(tweenvalue));
+		tween(layer[showicon1].rotate, 0, get(tweenvalue));
+		tween(layer[showicon1].y, 5, get(tweenvalue));
+		tween(layer[showicon3].rotate, 0, get(tweenvalue));
+		tween(layer[showicon3].y, 5, get(tweenvalue));
+		tween(layer[showicon4].rotate, 0, get(tweenvalue));
+		tween(layer[showicon4].y, 5, get(tweenvalue));
+		tween(layer[showicon5].rotate, 0, get(tweenvalue));
+		tween(layer[showicon5].y, 5, get(tweenvalue));
+
+		<!-- setting hight of MainMenuItem to show submenus-->
+		tween(layer[MainMenuItem2].height, calc(menu_settings.menu_bt_height* menu_settings.MMI2items),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem2].height, calc( menu_settings.menu_bt_height* menu_settings.MMI2items),  get(menu_settings.tweenvalue));
+		trace(layer[MainMenuItem2].y);
+		trace(layer[SubMeinMenuitem2].height);
+
+		<!-- setting onclick to heightshow -->
+		set(layer[MM1-2].onclick, MainMenuItem2-heighthide);
+		if(layer[MM1-1].onclick === "MainMenuItem1-heighthide",
+			set(layer[MM1-1].onclick, MainMenuItem1-heightshow);
+			);
+		if(layer[MM1-3].onclick === "MainMenuItem3-heighthide",
+			set(layer[MM1-3].onclick, MainMenuItem3-heightshow);
+			);
+		if(layer[MM1-4].onclick === "MainMenuItem4-heighthide",
+			set(layer[MM1-4].onclick, MainMenuItem4-heightshow);
+			);
+		if(layer[MM1-5].onclick === "MainMenuItem5-heighthide",
+			set(layer[MM1-5].onclick, MainMenuItem5-heightshow);
+			);
+		trace(layer[MM1-1].onclick);trace(layer[MM1-2].onclick);trace(layer[MM1-3].onclick);
+
+		<!-- resseting height of other items-->
+		tween(layer[MainMenuItem1].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem1].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem3].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem3].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem4].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem4].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem5].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem5].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		
+		<!-- setting postion for other menu items-->
+		tween(layer[MainMenuItem2].y, get(menu_settings.MainMenuItem2_y),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem3].y, calc(menu_settings.menu_bt_height* (menu_settings.MMI2items + 1) + Layer[MainMenuItem1].y),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem4].y, calc(menu_settings.menu_bt_height* (menu_settings.MMI2items + 2) + Layer[MainMenuItem1].y),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem5].y, calc(menu_settings.menu_bt_height* (menu_settings.MMI2items + 3) + Layer[MainMenuItem1].y),  get(menu_settings.tweenvalue));
+		
+</action>
+
+<action name="MainMenuItem2-heighthide">
+		<!-- rotate back arrow icon-->
+		tween(layer[showicon2].rotate, 0, get(tweenvalue));
+		tween(layer[showicon2].y, 5, get(tweenvalue));
+		
+		tween(layer[MainMenuItem2].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem2].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem3].y, get(menu_settings.MainMenuItem3_y),  get(menu_settings.tweenvalue));
+		<!--tween(layer[MainMenuItem3].y, 90, 0.5);
+		trace(layer[MainMenuItem3].y);-->
+		set(layer[MM1-2].onclick, MainMenuItem2-heightshow);
+		trace(layer[MM1-2].onclick);
+
+		tween(layer[MainMenuItem3].y, get(menu_settings.MainMenuItem3_y), get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem4].y, get(menu_settings.MainMenuItem4_y), get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem5].y, get(menu_settings.MainMenuItem5_y), get(menu_settings.tweenvalue));
+		
+</action>
+
+<action name="MainMenuItem3-heightshow">
+		<!-- rotate arrow icon-->
+		tween(layer[showicon3].rotate, -180, get(tweenvalue));
+		tween(layer[showicon3].y, 20, get(tweenvalue));
+		tween(layer[showicon2].rotate, 0, get(tweenvalue));
+		tween(layer[showicon2].y, 5, get(tweenvalue));
+		tween(layer[showicon1].rotate, 0, get(tweenvalue));
+		tween(layer[showicon1].y, 5, get(tweenvalue));
+		tween(layer[showicon4].rotate, 0, get(tweenvalue));
+		tween(layer[showicon4].y, 5, get(tweenvalue));
+		tween(layer[showicon5].rotate, 0, get(tweenvalue));
+		tween(layer[showicon5].y, 5, get(tweenvalue));
+
+		<!-- setting height of MainMenuItem to show submenus-->
+		tween(layer[MainMenuItem3].height, calc(menu_settings.menu_bt_height* menu_settings.MMI3items),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem3].height, calc(menu_settings.menu_bt_height* menu_settings.MMI3items),  get(menu_settings.tweenvalue));
+		trace(layer[MainMenuItem3].y);
+		trace(layer[SubMeinMenuitem3].height);
+
+		<!-- setting onclick to heightshow-->
+		set(layer[MM1-3].onclick, MainMenuItem3-heighthide);
+		if(layer[MM1-1].onclick === "MainMenuItem1-heighthide",
+			set(layer[MM1-1].onclick, MainMenuItem1-heightshow);
+			);
+		if(layer[MM1-2].onclick === "MainMenuItem2-heighthide",
+			set(layer[MM1-2].onclick, MainMenuItem2-heightshow);
+			);
+		if(layer[MM1-4].onclick === "MainMenuItem4-heighthide",
+			set(layer[MM1-4].onclick, MainMenuItem4-heightshow);
+			);
+		if(layer[MM1-5].onclick === "MainMenuItem5-heighthide",
+			set(layer[MM1-5].onclick, MainMenuItem5-heightshow);
+			);
+		trace(layer[MM1-1].onclick);trace(layer[MM1-2].onclick);trace(layer[MM1-3].onclick);
+
+		<!-- resseting height of other items-->
+		tween(layer[MainMenuItem1].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem1].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem2].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem2].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem4].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem4].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem5].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem5].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		
+
+
+		<!-- setting postion for other menu items-->
+		tween(layer[MainMenuItem2].y, get(menu_settings.MainMenuItem2_y),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem3].y, get(menu_settings.MainMenuItem3_y), get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem4].y, calc(menu_settings.menu_bt_height* (menu_settings.MMI3items + 2) + Layer[MainMenuItem1].y),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem5].y, calc(menu_settings.menu_bt_height* (menu_settings.MMI3items + 3) + Layer[MainMenuItem1].y),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem6].y, calc(menu_settings.menu_bt_height* (menu_settings.MMI3items + 4) + Layer[MainMenuItem1].y),  get(menu_settings.tweenvalue));
+</action>
+
+
+<action name="MainMenuItem3-heighthide">
+		<!-- rotate back arrow icon-->
+		tween(layer[showicon3].rotate, 0, get(tweenvalue));
+		tween(layer[showicon3].y, 5, get(tweenvalue));
+		
+		tween(layer[MainMenuItem3].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem3].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem3].y, get(menu_settings.MainMenuItem3_y),  get(menu_settings.tweenvalue));
+		trace(layer[MainMenuItem3].y);
+		set(layer[MM1-3].onclick, MainMenuItem3-heightshow);
+		trace(layer[MM1-3].onclick);
+
+		tween(layer[MainMenuItem4].y, get(menu_settings.MainMenuItem4_y), get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem5].y, get(menu_settings.MainMenuItem5_y), get(menu_settings.tweenvalue));
+		
+</action>
+
+
+<action name="MainMenuItem4-heightshow">
+		<!-- rotate arrow icon-->
+		tween(layer[showicon4].rotate, -180, get(tweenvalue));
+		tween(layer[showicon4].y, 20, get(tweenvalue));
+		tween(layer[showicon2].rotate, 0, get(tweenvalue));
+		tween(layer[showicon2].y, 5, get(tweenvalue));
+		tween(layer[showicon3].rotate, 0, get(tweenvalue));
+		tween(layer[showicon3].y, 5, get(tweenvalue));
+		tween(layer[showicon1].rotate, 0, get(tweenvalue));
+		tween(layer[showicon1].y, 5, get(tweenvalue));
+		tween(layer[showicon5].rotate, 0, get(tweenvalue));
+		tween(layer[showicon5].y, 5, get(tweenvalue));
+
+		<!-- setting hight of MainMenuItem to show submenus-->
+		tween(layer[MainMenuItem4].height, calc(menu_settings.menu_bt_height* menu_settings.MMI4items),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem4].height, calc(menu_settings.menu_bt_height* menu_settings.MMI4items),  get(menu_settings.tweenvalue));
+		trace(layer[MainMenuItem4].y);
+		trace(layer[SubMeinMenuitem4].height);
+
+		<!-- setting onclick to heightshow-->
+		set(layer[MM1-4].onclick, MainMenuItem4-heighthide);
+
+		if(layer[MM1-1].onclick === "MainMenuItem1-heighthide",
+			set(layer[MM1-1].onclick, MainMenuItem1-heightshow);
+			);
+		if(layer[MM1-2].onclick === "MainMenuItem2-heighthide",
+			set(layer[MM1-2].onclick, MainMenuItem2-heightshow);
+			);
+		if(layer[MM1-3].onclick === "MainMenuItem3-heighthide",
+			set(layer[MM1-3].onclick, MainMenuItem3-heightshow);
+			);
+		if(layer[MM1-5].onclick === "MainMenuItem5-heighthide",
+			set(layer[MM1-5].onclick, MainMenuItem5-heightshow);
+			);
+		trace(layer[MM1-1].onclick);trace(layer[MM1-2].onclick);trace(layer[MM1-3].onclick);
+
+		<!-- resseting height of other items-->
+		tween(layer[MainMenuItem1].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem1].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem2].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem2].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem3].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem3].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem5].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem5].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		
+
+
+		<!-- setting postion for other menu items-->
+		tween(layer[MainMenuItem2].y, get(menu_settings.MainMenuItem2_y),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem3].y, get(menu_settings.MainMenuItem3_y), get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem4].y, get(menu_settings.MainMenuItem4_y),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem5].y, calc(menu_settings.menu_bt_height* (menu_settings.MMI4items + 3) + Layer[MainMenuItem1].y),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem6].y, calc(menu_settings.menu_bt_height* (menu_settings.MMI4items + 4) + Layer[MainMenuItem1].y),  get(menu_settings.tweenvalue));
+</action>
+
+
+<action name="MainMenuItem4-heighthide">
+		<!-- rotate back arrow icon-->
+		tween(layer[showicon4].rotate, 0, get(tweenvalue));
+		tween(layer[showicon4].y, 5, get(tweenvalue));
+	
+		
+		tween(layer[MainMenuItem4].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem4].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem4].y, get(menu_settings.MainMenuItem4_y),  get(menu_settings.tweenvalue));
+		trace(layer[MainMenuItem4].y);
+		set(layer[MM1-4].onclick, MainMenuItem4-heightshow);
+		trace(layer[MM1-4].onclick);
+
+		
+		tween(layer[MainMenuItem5].y, get(menu_settings.MainMenuItem5_y), get(menu_settings.tweenvalue));
+		
+</action>
+
+
+<action name="MainMenuItem5-heightshow">
+		<!-- rotate arrow icon-->
+		tween(layer[showicon5].rotate, -180, get(tweenvalue));
+		tween(layer[showicon5].y, 20, get(tweenvalue));
+		tween(layer[showicon2].rotate, 0, get(tweenvalue));
+		tween(layer[showicon2].y, 5, get(tweenvalue));
+		tween(layer[showicon3].rotate, 0, get(tweenvalue));
+		tween(layer[showicon3].y, 5, get(tweenvalue));
+		tween(layer[showicon4].rotate, 0, get(tweenvalue));
+		tween(layer[showicon4].y, 5, get(tweenvalue));
+		tween(layer[showicon1].rotate, 0, get(tweenvalue));
+		tween(layer[showicon1].y, 5, get(tweenvalue));
+
+		<!-- setting hight of MainMenuItem to show submenus-->
+		tween(layer[MainMenuItem5].height, calc(menu_settings.menu_bt_height* menu_settings.MMI5items),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem5].height, calc(menu_settings.menu_bt_height* menu_settings.MMI5items),  get(menu_settings.tweenvalue));
+		trace(layer[MainMenuItem5].y);
+		trace(layer[SubMeinMenuitem5].height);
+
+		<!-- setting onclick to heightshow-->
+		set(layer[MM1-5].onclick, MainMenuItem5-heighthide);
+
+		if(layer[MM1-1].onclick === "MainMenuItem1-heighthide",
+			set(layer[MM1-1].onclick, MainMenuItem1-heightshow);
+			);
+		if(layer[MM1-2].onclick === "MainMenuItem2-heighthide",
+			set(layer[MM1-2].onclick, MainMenuItem2-heightshow);
+			);
+		if(layer[MM1-3].onclick === "MainMenuItem3-heighthide",
+			set(layer[MM1-3].onclick, MainMenuItem3-heightshow);
+			);
+		if(layer[MM1-4].onclick === "MainMenuItem4-heighthide",
+			set(layer[MM1-4].onclick, MainMenuItem4-heightshow);
+			);
+		trace(layer[MM1-1].onclick);trace(layer[MM1-2].onclick);trace(layer[MM1-3].onclick);
+
+		<!-- resseting height of other items-->
+		tween(layer[MainMenuItem1].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem1].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem2].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem2].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem3].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem3].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem4].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem4].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		
+
+
+		<!-- setting postion for other menu items-->
+		tween(layer[MainMenuItem2].y, get(menu_settings.MainMenuItem2_y),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem3].y, get(menu_settings.MainMenuItem3_y), get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem4].y, get(menu_settings.MainMenuItem4_y),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem5].y, get(menu_settings.MainMenuItem5_y),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem6].y, calc(menu_settings.menu_bt_height* (menu_settings.MMI4items + 3) + Layer[MainMenuItem1].y),  get(menu_settings.tweenvalue));
+</action>
+
+<action name="MainMenuItem5-heighthide">
+	
+		
+		tween(layer[MainMenuItem5].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[SubMeinMenuitem5].height, calc(menu_settings.menu_bt_height*1),  get(menu_settings.tweenvalue));
+		tween(layer[MainMenuItem5].y, get(menu_settings.MainMenuItem5_y),  get(menu_settings.tweenvalue));
+		trace(layer[MainMenuItem5].y);
+		set(layer[MM1-5].onclick, MainMenuItem5-heightshow);
+		trace(layer[MM1-5].onclick);
+
+		
+		tween(layer[MainMenuItem5].y, get(menu_settings.MainMenuItem5_y), get(menu_settings.tweenvalue));
+		
+</action>
+
+</krpano>

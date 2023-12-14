@@ -1,0 +1,196 @@
+﻿<krpano version="1.19"  >
+
+	<!-- Settings for hotspot check debugmode="true"--> 
+	
+	<visited_spots_check_settings
+		
+		style_to_check="skin_hotspotstyle"
+		what_to_do="set(alpha, 0.5)"
+		
+		visited_thumbs_icon="%SWFPATH%/skin/visited.png"
+		visited_thumbs_icon_align="rightbottom"
+		visited_thumbs_icon_x="5"
+		visited_thumbs_icon_y="0"
+		visited_thumbs_icon_scale="1"
+
+		visited_SubM_icon="%SWFPATH%/skin/visited.png"
+		visited_SubM_icon_align="right"
+		visited_SubM_icon_x="9"
+		visited_SubM_icon_y="0"
+		visited_SubM_icon_scale="0.8"
+	
+	/>
+
+	<!-- Event to check spots onnewpano -->
+	
+	<events name="visited_spots_check_event" keep="true" onnewpano="check_visited_spots();check_visited_thumbs(); visitedcheck(); " />
+
+
+
+
+	
+	<!-- Action for checking spots via array  if(hotspot[get(i)].linkedscene == get(xml.scene),
+	
+	
+	
+	-->
+	
+	<action name="check_visited_spots" >
+		for(set(i,0), i LT hotspot.count, inc(i),
+			if(hotspot[get(i)].style == get(visited_spots_check_settings.style_to_check),
+				txtadd(hotspot[get(i)].onclick, 
+					if(hotspot[get(name)].wasreset != true, 
+						txtadd(info_to_add, get(name),'|');txtadd(scene[get(xml.scene)].visited_spots, get(info_to_add));
+					);
+				);
+			);
+		);
+		
+		
+		if(scene[get(xml.scene)].visited_spots, 
+			txtsplit(scene[get(xml.scene)].visited_spots, '|', visited_spots_arr);
+			for(set(i,0), i LT visited_spots_arr.count, inc(i),
+				if(hotspot[get(visited_spots_arr[get(i)].value)], 
+					set(hotspot[get(visited_spots_arr[get(i)].value)].wasreset, true);
+					callwith(hotspot[get(visited_spots_arr[get(i)].value)], get(visited_spots_check_settings.what_to_do));
+				);
+		    );
+		);
+
+	
+		
+	</action>
+	
+	<action name="check_visited_thumbs" scope="global">
+		
+		<!--trace(get(scene[get(xml.scene)].visited));-->
+		if(scene[get(xml.scene)].visited != true,
+			set(scene[get(xml.scene)].visited, true);
+			set( a, get(xml.scene));
+			<!--trace(get(scene[get(xml.scene)].visited));-->
+			
+			<!--
+			trace(get(scene[3].title));
+			trace(get(a));
+			-->
+			txtadd(visited_mark_name, 'visited_mark_', get(scene[get(xml.scene)].index));
+			<!--trace(get(visited_mark_name));-->
+			addlayer(get(visited_mark_name));
+
+			copy(layer[get(visited_mark_name)].url, visited_spots_check_settings.visited_thumbs_icon);
+			copy(layer[get(visited_mark_name)].align, visited_spots_check_settings.visited_thumbs_icon_align);
+			copy(layer[get(visited_mark_name)].x, visited_spots_check_settings.visited_thumbs_icon_x);
+			copy(layer[get(visited_mark_name)].y, visited_spots_check_settings.visited_thumbs_icon_y);
+			copy(layer[get(visited_mark_name)].scale, visited_spots_check_settings.visited_thumbs_icon_scale);
+			txtadd(layer[get(visited_mark_name)].parent, 'skin_thumb_', get(scene[get(xml.scene)].index));
+			set(layer[get(visited_mark_name)].enabled, false);
+			set(layer[get(visited_mark_name)].keep, true);
+
+			txtadd(visited_SubM_name, 'visited_SubM_', get(scene[get(xml.scene)].index));
+			<!--trace(get(visited_SubM_name));-->
+			addlayer(get(visited_SubM_name));
+			copy(layer[get(visited_SubM_name)].url, visited_spots_check_settings.visited_SubM_icon);
+			copy(layer[get(visited_SubM_name)].align, visited_spots_check_settings.visited_SubM_icon_align);
+			copy(layer[get(visited_SubM_name)].x, visited_spots_check_settings.visited_SubM_icon_x);
+			copy(layer[get(visited_SubM_name)].y, visited_spots_check_settings.visited_SubM_icon_y);
+			copy(layer[get(visited_SubM_name)].scale, visited_spots_check_settings.visited_SubM_icon_scale);
+			txtadd(layer[get(visited_SubM_name)].parent, 'SubM_', get(scene[get(xml.scene)].index));
+			set(layer[get(visited_SubM_name)].enabled, false);
+			set(layer[get(visited_SubM_name)].keep, true);
+			
+		);
+		<!--
+		for(set(i,0), i LT hotspot.count, inc(i),
+			set(t[], get(hotspot[get(i)].linkedscene));
+			if(t != null,
+						trace(get(t));
+			);
+			trace(get(hotspost[get(i)].linkedscene));
+				if(scene[get(i)].visited == true,
+					trace(scene[get(i)].name);
+
+					if(t != null,
+						trace(get(t));`
+					);
+					trace("true");
+					trace(get(scene[get(i)].name));
+					trace(get(hotspot[get(t)].linkedscene));
+					if(t == scene[get(i)].name,
+							trace("wau");
+					);
+					
+
+					
+				);
+
+		);	
+
+		for(set(i,0), i LT hotspot.count, inc(i),
+			if(hotspot[get(i)].style == get(visited_spots_check_settings.style_to_check),
+				trace("aasd");
+				trace(get(vscene[get(i)].name));
+				for(set(j,0), i LT visited_scenes.count, inc(j),
+					trace("1");
+						set(hotspot[get(i)].crop, "128|0|128|112" );
+					if(hotspot[get(i)].linkedscene == visited_scenes[get(j)], 
+					);
+					!
+					
+				);
+				trace(get(j));
+			);
+		);
+			
+		
+
+
+
+
+		-->
+		
+ 
+	</action>
+
+
+	
+
+
+	<action name="visitedcheck">
+		if(scene[get(xml.scene)].visited == true,
+		trace("to bree");
+		);
+	</action>
+
+	<action name="test" type="javascript"><![CDATA[
+		
+	
+	
+	
+	]]>
+	</action>
+
+
+	<action>
+	 createarray(areas);
+		set(c,0);
+		for(set(i,0), i LT scene.count, inc(i),
+		if(scene[get(i)].area == true,
+		set(areas[get(c)].value, get(scene[get(i)].content));
+		inc(c);
+		);
+		);
+	</action>
+
+	<action name ="create_visited_scenes_array">
+	createarray(visited_scenes);
+		for(set(i,0), i LT scene.count, inc(i),
+		if(scene[get(i)].visited == true,
+		visited_scenes.createarrayitem(get(scene[get(i)].name));
+		);
+		);
+		<!--for(set(i,0), i LT visited_scenes.count, inc(i),
+		trace(get(visited_scenes[get(i)].name))
+		);-->
+	</action>
+  
+</krpano>

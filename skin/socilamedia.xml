@@ -1,0 +1,84 @@
+<krpano>
+<style name="socialsyle" width="250" height="50" align="bottom"  bgcolor="0x858e33" bgalpha="0.5" keep="true" />
+<style name="Subsocial" type="text" bgalpha="0"
+		css="color:#ffffff; font-family:Arial, Helvetica; font-weight:bold; font-size:14px;" 
+		
+		
+/>
+<!--
+<layer name="socialM" type="container" width="250" height="200" align="right" bgcolor="0x858e33" bgalpha="0" keep="true" enabled="false">
+</layer>
+   <layer name="mainbooking" type="container" width="250" height="50"  y="-100" align="right"  maskchildren="true"   keep="true" bgalpha="1" zorder="99">
+    </layer>  
+ 
+ --> 
+    <layer name="allSocial" width="250"  type="container" height="200" maskchildren="true" align="righttop" y="25" bgalpha="0" keep="true" >
+
+            <layer name="phonec" type="container" style="socialsyle" y="150" x="200" onclick="opensocial();" bgcapture="true">
+                <layer name="phone"  type="image" url="socilaicon/icons8-phone-100-white.png" scale="0.5" parent="phonec" enabled="false" />
+                <layer name="phonetext" type="text" style="Subsocial" html="(+381)(0)36 5468-200[br]  (+381)(0)64 3005001" align="left" x="55"/>
+            </layer> 
+
+            <layer name="mailc" type="container" style="socialsyle" y="100" x="200" onclick="opensocial();" bgcapture="true">  
+                <layer name="mail"  type="image"  url="socilaicon/icons8-mail-100-white.png" scale="0.5" parent="mailc" enabled="false"/>
+                <layer name="mailtext" type="text" style="Subsocial" html="etnokucagocko@live.com" align="left" x="55"/>
+            </layer>
+
+            <layer name="bookingc" style="socialsyle" type="container" y="50" x="200" onclick="openurl('https://www.booking.com/hotel/rs/etno-kuca-sa-konacistem-gocko-vrnjacka-banja.sr.html');" bgcapture="true">
+                <layer name="booking" type="image" x="0" url="socilaicon/booking-com-white-empy-100.png"  parent="bookingc" enabled="false" scale="0.5"  />
+                <layer name="bokingtext" style="Subsocial" type="text" html="[a href='https://www.booking.com/hotel/rs/etno-kuca-sa-konacistem-gocko-vrnjacka-banja.sr.html' target='_blank']Booking.com [/a]" align="left" x="55"/>
+            </layer> 
+
+            <layer name="facebookc" type="container" style="socialsyle" y="0" x="200" onclick="openurl('https://www.facebook.com/groups/364321309825/'); " bgcapture="true">    
+                <layer name="facebook"  type="image"  url="socilaicon/icons8-facebook-100-white.png" scale="0.5" parent="facebookc"  enabled="false"/>
+                <layer name="facebooktext" type="text" style="Subsocial" html="[a href='https://www.facebook.com/groups/364321309825/' target='_blank'] Etno kuća Gočko Facebook [/a]"   align="left" x="55"/>
+            </layer>    
+    </layer>
+    <!--<layer name="showhidesocial" type="container" width="25" height="25" align="righttop"  x="50"  keep="true">
+		<layer name="buttonf" type="image" url="buttonfree.png" x="0" y="5" scale=".5" onclick="hidebuttons();" onover="" />
+	</layer>-->
+    <style name="SocialIcon" type="text"  css=" border: solid white; border-width: 0 4px 4px 0; display: inline-block; padding: 4px;  transform: rotate(-45deg); -webkit-transform: rotate(-45deg);" backgroundalpha="0" />
+
+    	<layer name="icon_social" style="SocialIcon" keep="true" align="righttop" x="40" y="15" onclick="hidebuttons();" visible="true" edge="center"/>
+
+    <action name="hidebuttons"> 
+			tween(layer[phonec].x, 250, .5 ); 
+			tween(layer[mailc].x, 250, .5 );
+			tween(layer[bookingc].x, 250, .5 );
+			tween(layer[facebookc].x, 250, .5 );
+
+            tween(layer[icon_social].rotate, -180, get(tweenvalue));
+            tween(layer[icon_social].x, 10, get(tweenvalue));
+
+			set(layer[icon_social].onclick, showbuttons());
+            
+	</action>
+
+	<action name="showbuttons"> 
+			tween(layer[phonec].x, 200, .5 );  
+			tween(layer[mailc].x, 200, .5 );
+			tween(layer[bookingc].x, 200, .5 );
+			tween(layer[facebookc].x, 200, .5 );
+
+            tween(layer[icon_social].rotate, 0, get(tweenvalue));
+            tween(layer[icon_social].x, 40, get(tweenvalue));
+
+
+            set(layer[phonec].onclick, opensocial());
+            set(layer[mailc].onclick, opensocial());
+			set(layer[icon_social].onclick, hidebuttons());
+	</action>
+
+
+<action name="opensocial">
+    tween(x, 0, 0.3);
+    set(onclick, closesocial()); 
+</action>
+
+<action name="closesocial">
+    tween(x, 200, 0.3);
+    set(onclick, opensocial());
+</action>
+
+
+</krpano>
